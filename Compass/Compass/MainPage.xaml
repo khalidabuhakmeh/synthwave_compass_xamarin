@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Compass"
+             xmlns:vm="clr-namespace:Compass.ViewModels;assembly=Compass"
+             x:Class="Compass.MainPage">
+    <ContentPage.BindingContext>
+        <vm:CompassViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Image HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               BackgroundColor="black"
+               Scale="1.5"
+               Source="background.png" />
+        
+        <Image HorizontalOptions="CenterAndExpand"
+               Scale="1.8"
+               Source="compass.png" />
+        
+        <Image HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               Scale="1.4"
+               Rotation="{Binding MagneticNorth}"
+               Source="needle.png" />
+        
+    </Grid>
+
+</ContentPage>
